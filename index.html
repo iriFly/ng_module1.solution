@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCounter">
+
+  <head>
+    <title>Lunch Items</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.css">
+    <script src="app.js"></script>
+  </head>
+
+<body>
+   <div class="container">
+     <h1>Lunch Items List</h1>
+     <hr>
+        <div ng-controller="LunchController">
+            <div class="form-group">
+                <input id="lunch-menu" type="text"
+                placeholder="Please list the number of food items you had for lunch, seperated by comma"
+                class="form-control"
+                ng-model = "food">
+            </div>
+            <div>
+                <p class="text-muted"> Please do not leave blank </p>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" ng-click="checkItem()">Check If Too Much</button>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div
+                    class="form-group message"
+                    style="color:{{colour}}; border: 1px solid {{colour}}"
+                    align="center">
+                        <span>{{value}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+
+</body>
+</html>
